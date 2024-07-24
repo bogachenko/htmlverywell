@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function()
 	{
 		const ipAddress = data.ip;
 		const infoContainer = document.getElementById('info-container');
-		infoContainer.innerHTML = `<p>Your IP address is: <strong>${ipAddress}</strong>`;
+		infoContainer.innerHTML = `<p>Your IP address is: <strong>${ipAddress}</strong></p>`;
 		return fetch(`https://ipapi.co/${ipAddress}/json/`);
 	}).then(response => response.json()).then(data =>
 	{
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function()
 					break;
 				}
 			}
-			infoContainer.innerHTML += `Your country is: <strong>${country}</strong> <img src="${flagBase64}" alt="${country} flag" class="flags"></p>`;
+			infoContainer.innerHTML += `<p>Your country is: <strong>${country}</strong> <img src="${flagBase64}" alt="${country} flag" class="flags"></p>`;
 		});
 	}).catch(error =>
 	{
