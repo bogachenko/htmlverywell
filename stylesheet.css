@@ -1,6 +1,5 @@
 * {
-	margin: 0;
-	padding: 0
+	box-sizing: border-box
 }
 
 body,
@@ -9,16 +8,15 @@ html {
 	background-color: #d8dbe2;
 	font-family: Verdana, sans-serif;
 	font-size: 11pt;
-	text-align: center
+	text-align: center;
+	overflow-x: hidden
 }
 
 div.main_page {
 	position: relative;
 	display: table;
-	width: 1500px;
-	margin-bottom: 3px;
-	margin-left: auto;
-	margin-right: auto;
+	max-width: 1500px;
+	margin: 0 auto;
 	padding: 0;
 	border: 2px solid #212738;
 	background-color: #fff;
@@ -28,7 +26,6 @@ div.main_page {
 div.page_header {
 	height: 100px;
 	width: 100%;
-	background-color: #f5f6f7
 }
 
 div.content_section,
@@ -39,8 +36,8 @@ div.table_of_contents_item {
 }
 
 div.page_header span {
-	margin: 30px 0 0 30px;
-	font-size: 180%;
+	padding: 30px 0 0 30px;
+	font-size: 32px;
 	font-weight: 700
 }
 
@@ -68,7 +65,7 @@ div.content_section {
 div.content_section_text {
 	padding: 4px 8px;
 	color: #000;
-	font-size: 100%
+	font-size: 11pt
 }
 
 div.content_section_text pre {
@@ -93,7 +90,7 @@ div.section_header {
 	background-color: #8e9cb2;
 	color: #fff;
 	font-weight: 700;
-	font-size: 112%;
+	font-size: 18px;
 	text-align: center
 }
 
@@ -112,9 +109,8 @@ div.table_of_contents_item a {
 	font-weight: 700
 }
 
-div.table_of_contents_item a:active,
-div.table_of_contents_item a:link,
-div.table_of_contents_item a:visited {
+div.table_of_contents_item a,
+div.content_section_text a {
 	color: #000
 }
 
@@ -123,20 +119,67 @@ div.table_of_contents_item a:hover {
 	color: #fff
 }
 
-div.content_section_text a:active,
-div.content_section_text a:link,
-div.content_section_text a:visited {
-	background-color: #dcdfe6;
-	color: #000
-}
-
 div.content_section_text a:hover {
 	background-color: #000;
 	color: #dcdfe6
 }
 
-p.сopyright {
-	font-size: .6em;
+p.copyright a:hover {
 	line-height: 14px;
-	text-align: center
+	text-align: center;
+	text-decoration: none;
+	background-color: #000;
+	background-color: #000;
+	color: #dcdfe6
+}
+
+p.copyright a {
+	text-decoration: none;
+	color: #000;
+	font-weight: 700;
+}
+
+@media(max-width:768px) {
+	div.page_header span {
+		font-size: 28px
+	}
+
+	div.content_section {
+		margin: 1px
+	}
+
+	div.content_section_text {
+		font-size: 11pt;
+		padding: 2px 4px
+	}
+
+	div.section_header {
+		font-size: 16px
+	}
+}
+
+@media(max-width:480px) {
+	div.page_header {
+		height: 100px;
+		width: 100%;
+	}
+
+	div.page_header span {
+		font-size: 24px;
+		padding: 30px 0 0 30px
+	}
+
+	div.main_page {
+		width: 100%;
+		padding: 0 5px
+	}
+
+	div.table_of_contents,
+	div.table_of_contents_item {
+		min-width: auto
+	}
+
+	div.content_section_text {
+		padding: 2px 4px
+	}
 }
