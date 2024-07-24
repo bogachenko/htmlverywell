@@ -158,6 +158,24 @@ p.copyright a
 	font-weight: 700;
 }
 
+#info-container
+{
+	margin: 0;
+	padding: 0;
+}
+
+#info-container p
+{
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+}
+
+.error-message
+{
+	color: #ff0000;
+}
+
 @media(max-width:768px)
 {
 	div.page_header span
