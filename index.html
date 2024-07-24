@@ -1,34 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>VeryWellHTML</title>
-		<link rel="stylesheet" href="stylesheet.css">
-		<script src="scripts.js"></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	</head>
-	<body>
-		<div class="main_page">
-			<div class="page_header floating_element">
-				<span class="floating_element">VeryWellHTML</span>
+<head>
+	<meta charset="UTF-8">
+	<title>VeryWellHTML</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="stylesheet.css">
+	<script src="scripts.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+<body>
+	<noscript>
+		<style>
+			#js-disabled
+			{
+				user-select: none;
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				z-index: 30000000;
+				height: 100%;
+				width: 100%;
+				background-color: #FFFFFF;
+				margin: unset;
+				padding: unset;
+				text-align: center;
+				color: #000000;
+				font-size: 30px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		</style>
+		<div id="js-disabled">
+			<h3>Please enable JavaScript.</h3>
+		</div>
+	</noscript>
+	<div class="main_page">
+		<div class="page_header floating_element">
+			<span class="floating_element">VeryWellHTML</span>
+		</div>
+		<div class="content_section floating_element">
+			<div class="section_header section_header_red">
+				<div id="about"></div> What it is?
 			</div>
-			<div class="content_section floating_element">
-				<div class="section_header section_header_red">
-					<div id="about"></div>
-					What it is?
-				</div>
-				<div class="content_section_text">
-					<p>VeryWellHTML is a toolkit designed to assess a web browser's implementation of various common web standards. Additionally, the site offers a series of tests to evaluate the security and privacy of a web browser. These tests aim to identify methods through which websites can reveal your actual IP address, gather information about your device, and conduct browser fingerprinting.</p>
-					<p>Based on this information, you can take appropriate steps to protect your privacy online and minimize exposure to potential threats.</p>
-				</div>
-				<div class="section_header">
-					<div id="changes"></div>
-					Configuration Overview
-				</div>
-				<div class="content_section_text">
-					<p>Debian's Apache2 default configuration is different from the upstream default configuration, and split into several files optimized for interaction with Debian tools. The configuration system is <b>fully documented in /usr/share/doc/apache2/README.Debian.gz</b>. Refer to this for the full documentation. Documentation for the web server itself can be found by accessing the <a href="http://192.168.0.104:8081/manual">manual</a> if the <tt>apache2-doc</tt> package was installed on this server. </p>
-					<p>The configuration layout for an Apache2 web server installation on Debian systems is as follows:</p>
-					<pre>/etc/apache2/
+			<div class="content_section_text">
+				<p>VeryWellHTML is a toolkit designed to assess a web browser's implementation of various common web standards. Additionally, the site offers a series of tests to evaluate the security and privacy of a web browser. These tests aim to identify methods through which websites can reveal your actual IP address, gather information about your device, and conduct browser fingerprinting.</p>
+				<p>Based on this information, you can take appropriate steps to protect your privacy online and minimize exposure to potential threats.</p>
+			</div>
+			<div class="section_header">
+				<div id="changes"></div> Configuration Overview
+			</div>
+			<div class="content_section_text">
+				<p>Debian's Apache2 default configuration is different from the upstream default configuration, and split into several files optimized for interaction with Debian tools. The configuration system is <b>fully documented in /usr/share/doc/apache2/README.Debian.gz</b>. Refer to this for the full documentation. Documentation for the web server itself can be found by accessing the <a href="http://192.168.0.104:8081/manual">manual</a> if the <tt>apache2-doc</tt> package was installed on this server. </p>
+				<p>The configuration layout for an Apache2 web server installation on Debian systems is as follows:</p>
+				<pre>/etc/apache2/
 |-- apache2.conf
 |       `--  ports.conf
 |-- mods-enabled
@@ -39,41 +64,39 @@
 |-- sites-enabled
 |       `-- *.conf
                 </pre>
-					<ul>
-						<li>
-							<tt>apache2.conf</tt> is the main configuration file. It puts the pieces together by including all remaining configuration files when starting up the web server.
-						</li>
-						<li>
-							<tt>ports.conf</tt> is always included from the main configuration file. It is used to determine the listening ports for incoming connections, and this file can be customized anytime.
-						</li>
-						<li>Configuration files in the <tt>mods-enabled/</tt>, <tt>conf-enabled/</tt> and <tt>sites-enabled/</tt> directories contain particular configuration snippets which manage modules, global configuration fragments, or virtual host configurations, respectively. </li>
-						<li>They are activated by symlinking available configuration files from their respective *-available/ counterparts. These should be managed by using our helpers <tt>a2enmod, a2dismod,</tt>
-							<tt>a2ensite, a2dissite,</tt> and <tt>a2enconf, a2disconf</tt>. See their respective man pages for detailed information.
-						</li>
-						<li>The binary is called apache2. Due to the use of environment variables, in the default configuration, apache2 needs to be started/stopped with <tt>/etc/init.d/apache2</tt> or <tt>apache2ctl</tt>. <b>Calling <tt>/usr/bin/apache2</tt> directly will not work </b> with the default configuration. </li>
-					</ul>
-				</div>
-				<div class="section_header">
-					<div id="docroot"></div>
-					Document Roots
-				</div>
-				<div class="content_section_text">
-					<p>By default, Debian does not allow access through the web browser to <em>any</em> file apart of those located in <tt>/var/www</tt>, <a href="http://httpd.apache.org/docs/2.4/mod/mod_userdir.html" rel="nofollow">public_html</a> directories (when enabled) and <tt>/usr/share</tt> (for web applications). If your site is using a web document root located elsewhere (such as in <tt>/srv</tt>) you may need to whitelist your document root directory in <tt>/etc/apache2/apache2.conf</tt>. </p>
-					<p>The default Debian document root is <tt>/var/www/html</tt>. You can make your own virtual hosts under /var/www. This is different to previous releases which provides better security out of the box. </p>
-				</div>
-				<div class="section_header">
-					<div id="bugs"></div>
-					Reporting Problems
-				</div>
-				<div class="content_section_text">
-					<p>Please use the <tt>reportbug</tt> tool to report bugs in the Apache2 package with Debian. However, check <a href="http://bugs.debian.org/cgi-bin/pkgreport.cgi?ordering=normal;archive=0;src=apache2;repeatmerged=0" rel="nofollow">existing bug reports</a> before reporting a new bug. </p>
-					<p>Please report bugs specific to modules (such as PHP and others) to respective packages, not to the web server itself.</p>
-				</div>
+				<ul>
+					<li>
+						<tt>apache2.conf</tt> is the main configuration file. It puts the pieces together by including all remaining configuration files when starting up the web server.
+					</li>
+					<li>
+						<tt>ports.conf</tt> is always included from the main configuration file. It is used to determine the listening ports for incoming connections, and this file can be customized anytime.
+					</li>
+					<li>Configuration files in the <tt>mods-enabled/</tt>, <tt>conf-enabled/</tt> and <tt>sites-enabled/</tt> directories contain particular configuration snippets which manage modules, global configuration fragments, or virtual host configurations, respectively. </li>
+					<li>They are activated by symlinking available configuration files from their respective *-available/ counterparts. These should be managed by using our helpers <tt>a2enmod, a2dismod,</tt>
+						<tt>a2ensite, a2dissite,</tt> and <tt>a2enconf, a2disconf</tt>. See their respective man pages for detailed information.
+					</li>
+					<li>The binary is called apache2. Due to the use of environment variables, in the default configuration, apache2 needs to be started/stopped with <tt>/etc/init.d/apache2</tt> or <tt>apache2ctl</tt>. <b>Calling <tt>/usr/bin/apache2</tt> directly will not work </b> with the default configuration. </li>
+				</ul>
+			</div>
+			<div class="section_header">
+				<div id="docroot"></div> Document Roots
+			</div>
+			<div class="content_section_text">
+				<p>By default, Debian does not allow access through the web browser to <em>any</em> file apart of those located in <tt>/var/www</tt>, <a href="http://httpd.apache.org/docs/2.4/mod/mod_userdir.html" rel="nofollow">public_html</a> directories (when enabled) and <tt>/usr/share</tt> (for web applications). If your site is using a web document root located elsewhere (such as in <tt>/srv</tt>) you may need to whitelist your document root directory in <tt>/etc/apache2/apache2.conf</tt>. </p>
+				<p>The default Debian document root is <tt>/var/www/html</tt>. You can make your own virtual hosts under /var/www. This is different to previous releases which provides better security out of the box. </p>
+			</div>
+			<div class="section_header">
+				<div id="bugs"></div> Reporting Problems
+			</div>
+			<div class="content_section_text">
+				<p>Please use the <tt>reportbug</tt> tool to report bugs in the Apache2 package with Debian. However, check <a href="http://bugs.debian.org/cgi-bin/pkgreport.cgi?ordering=normal;archive=0;src=apache2;repeatmerged=0" rel="nofollow">existing bug reports</a> before reporting a new bug. </p>
+				<p>Please report bugs specific to modules (such as PHP and others) to respective packages, not to the web server itself.</p>
 			</div>
 		</div>
-		<br>
-			<p class="copyright">Copyright © 2024 <a href="mailto:bogachenkove@gmail.com">Vyacheslav Bogachenko</a>
-			</p>
-		<br>
-	</body>
+	</div>
+	<br>
+	<p class="copyright">Copyright © 2024 <a href="mailto:bogachenkove@gmail.com">Vyacheslav Bogachenko</a>
+	</p>
+	<br>
+</body>
 </html>

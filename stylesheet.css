@@ -1,18 +1,21 @@
-* {
-	box-sizing: border-box
+*
+{
+	box-sizing: border-box;
 }
 
-body,
-html {
+body
+{
 	padding: 3px;
 	background-color: #d8dbe2;
-	font-family: Verdana, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11pt;
 	text-align: center;
-	overflow-x: hidden
+	overflow-x: hidden;
+	user-select: none;
 }
 
-div.main_page {
+div.main_page
+{
 	position: relative;
 	display: table;
 	max-width: 1500px;
@@ -20,165 +23,193 @@ div.main_page {
 	padding: 0;
 	border: 2px solid #212738;
 	background-color: #fff;
-	text-align: center
 }
 
-div.page_header {
+div.page_header
+{
 	height: 100px;
 	width: 100%;
 }
 
-div.content_section,
-div.table_of_contents,
-div.table_of_contents_item {
+div.content_section
+{
 	background-color: #fff;
-	text-align: left
+	text-align: left;
 }
 
-div.page_header span {
+div.page_header span
+{
 	padding: 30px 0 0 30px;
 	font-size: 32px;
-	font-weight: 700
+	font-weight: 700;
 }
 
-div.table_of_contents {
+div.table_of_contents
+{
 	clear: left;
 	min-width: 200px;
-	margin: 3px
+	margin: 3px;
 }
 
-div.table_of_contents_item {
+div.table_of_contents_item
+{
 	clear: left;
 	width: 100%;
 	margin: 4px 0 0;
-	color: #000
+	color: #000;
 }
 
-div.table_of_contents_item a {
-	margin: 6px 0 0 6px
+div.table_of_contents_item a
+{
+	margin: 6px 0 0 6px;
 }
 
-div.content_section {
-	margin: 3px
+div.content_section
+{
+	margin: 3px;
 }
 
-div.content_section_text {
+div.content_section_text
+{
 	padding: 4px 8px;
 	color: #000;
-	font-size: 11pt
+	font-size: 11pt;
 }
 
-div.content_section_text pre {
+div.content_section_text pre
+{
 	margin: 8px 0;
 	padding: 8px;
 	border: 1px dotted #000;
 	background-color: #f5f6f7;
-	font-style: italic
+	font-style: italic;
 }
 
-div.content_section_text p {
-	margin-bottom: 6px
+div.content_section_text p
+{
+	margin-bottom: 6px;
 }
 
 div.content_section_text li,
-div.content_section_text ul {
-	padding: 4px 8px 4px 16px
+div.content_section_text ul
+{
+	padding: 4px 8px 4px 16px;
 }
 
-div.section_header {
+div.section_header
+{
 	padding: 3px 6px;
 	background-color: #8e9cb2;
 	color: #fff;
 	font-weight: 700;
 	font-size: 18px;
-	text-align: center
+	text-align: center;
 }
 
-div.section_header_red {
-	background-color: #cd214f
+div.section_header_red
+{
+	background-color: #cd214f;
 }
 
-.floating_element {
+.floating_element
+{
 	position: relative;
-	float: left
+	float: left;
 }
 
 div.content_section_text a,
-div.table_of_contents_item a {
+div.table_of_contents_item a
+{
 	text-decoration: none;
-	font-weight: 700
+	font-weight: 700;
 }
 
 div.table_of_contents_item a,
-div.content_section_text a {
-	color: #000
+div.content_section_text a
+{
+	color: #000;
 }
 
-div.table_of_contents_item a:hover {
+div.table_of_contents_item a:hover
+{
 	background-color: #000;
-	color: #fff
+	color: #fff;
 }
 
-div.content_section_text a:hover {
+div.content_section_text a:hover
+{
 	background-color: #000;
-	color: #dcdfe6
+	color: #dcdfe6;
 }
 
-p.copyright a:hover {
+p.copyright a:hover
+{
 	line-height: 14px;
 	text-align: center;
 	text-decoration: none;
 	background-color: #000;
-	color: #dcdfe6
+	color: #dcdfe6;
 }
 
-p.copyright a {
+p.copyright a
+{
 	text-decoration: none;
 	color: #000;
 	font-weight: 700;
 }
 
-@media(max-width:768px) {
-	div.page_header span {
-		font-size: 28px
+@media(max-width:768px)
+{
+	div.page_header span
+	{
+		font-size: 28px;
 	}
 
-	div.content_section {
-		margin: 1px
+	div.content_section
+	{
+		margin: 1px;
 	}
 
-	div.content_section_text {
+	div.content_section_text
+	{
 		font-size: 11pt;
-		padding: 2px 4px
+		padding: 2px 4px;
 	}
 
-	div.section_header {
-		font-size: 16px
+	div.section_header
+	{
+		font-size: 16px;
 	}
 }
 
-@media(max-width:480px) {
-	div.page_header {
+@media(max-width:480px)
+{
+	div.page_header
+	{
 		height: 100px;
 		width: 100%;
 	}
 
-	div.page_header span {
+	div.page_header span
+	{
 		font-size: 24px;
-		padding: 30px 0 0 30px
+		padding: 30px 0 0 30px;
 	}
 
-	div.main_page {
+	div.main_page
+	{
 		width: 100%;
-		padding: 0 5px
+		padding: 0 5px;
 	}
 
 	div.table_of_contents,
-	div.table_of_contents_item {
-		min-width: auto
+	div.table_of_contents_item
+	{
+		min-width: auto;
 	}
 
-	div.content_section_text {
-		padding: 2px 4px
+	div.content_section_text
+	{
+		padding: 2px 4px;
 	}
 }
