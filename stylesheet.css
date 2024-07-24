@@ -174,11 +174,11 @@ p.copyright a
 
 .flags
 {
-width: 50px;
-height: 46px;
-border-radius: 4px;
-margin-bottom: 10px;
-margin-left: 15px;
+	width: 50px;
+	height: 46px;
+	border-radius: 4px;
+	margin-bottom: 10px;
+	margin-left: 15px;
 }
 
 .error-message

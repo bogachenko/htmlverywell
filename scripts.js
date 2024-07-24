@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function()
 		console.error('Error fetching IP address or country:', error);
 		const infoContainer = document.getElementById('info-container');
 		infoContainer.innerHTML = `
-                <p>Your IP address is: <strong class="error-message">Unable to fetch IP address at this time.</strong><br>Your country is: <strong class="error-message">Unable to fetch country information at this time.</strong></p>
+                <p>Your IP address is: <strong class="error-message">Unable to fetch IP address at this time.</strong></p><p>Your country is: <strong class="error-message">Unable to fetch country information at this time.</strong></p>
             `;
 	});
 });
