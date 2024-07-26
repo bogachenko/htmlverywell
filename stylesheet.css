@@ -114,7 +114,23 @@ div.section_header_red
 .floating_element
 {
 	position: relative;
-	float: left;
+	float: inline-start;
+}
+
+.floating_element a:hover
+{
+	line-height: 14px;
+	text-align: center;
+	text-decoration: none;
+	background-color: #000;
+	color: #dcdfe6;
+}
+
+.floating_element a
+{
+	text-decoration: none;
+	color: #000;
+	font-weight: 700;
 }
 
 div.content_section_text a,
