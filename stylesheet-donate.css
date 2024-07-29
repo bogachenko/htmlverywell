@@ -1,0 +1,45 @@
+ body
+ {
+ 	font-family: Arial, sans-serif;
+ 	margin: 20px;
+ 	text-align: center;
+ }
+
+ select
+ {
+ 	padding: 3px;
+ 	font-size: 16px;
+ }
+
+ .qr-code
+ {
+ 	margin-top: 20px;
+ }
+
+ img
+ {
+ 	max-width: 100%;
+ 	height: auto;
+ }
+
+ .info
+ {
+ 	margin-top: 10px;
+ }
+
+ .info p
+ {
+ 	margin: 5px 0;
+ }
+
+ .token-list
+ {
+ 	margin-top: 10px;
+ 	text-align: left;
+ 	display: inline-block;
+ }
+
+ .label
+ {
+ 	font-weight: bold;
+ }
