@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Donation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+        .qr-code {
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .info {
+            margin-top: 10px;
+        }
+        .info p {
+            margin: 5px 0;
+        }
+        .token-list {
+            margin-top: 10px;
+            text-align: left;
+            display: inline-block;
+        }
+        code {
+            font-family: monospace;
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Donate with QR Code</h1>
+    <label for="currency">Choose a currency:</label>
+    <select id="currency">
+        <option value="bitcoin">Bitcoin</option>
+        <option value="bitcoin-cash">Bitcoin Cash</option>
+        <option value="binance-coin">Binance Coin</option>
+        <option value="ethereum">Ethereum</option>
+        <option value="ethereum-classic">Ethereum Classic</option>
+        <option value="tron">TRON</option>
+        <option value="toncoin">TON Coin</option>
+        <option value="dogecoin">Dogecoin</option>
+        <option value="litecoin">Litecoin</option>
+        <option value="solana">Solana</option>
+        <option value="ripple">Ripple</option>
+        <option value="cardano">Cardano</option>
+        <option value="zcash">Zcash</option>
+    </select>
+    <div class="qr-code">
+        <img id="qr-code-img" src="" alt="QR Code">
+        <div class="info">
+            <p id="chain-info"></p>
+            <p id="address-info">Address: <code id="address-code"></code></p>
+            <div id="token-list" class="token-list"></div>
+        </div>
+    </div>
+
+    <script>
+        // URL to JSON file
+        const jsonUrl = 'https://gist.githubusercontent.com/bogachenko/59a79fc26de1296153c87e64dd45d461/raw/db8fd30dd50a90d3c1b36c74fb908e5cc8c53451/add.json';
+
+        // Fetch the JSON data
+        fetch(jsonUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Create maps for QR codes, chains, addresses, and tokens from the JSON data
+                const qrCodes = {};
+                const chains = {};
+                const addresses = {};
+                const tokens = {};
+
+                for (const [key, value] of Object.entries(data)) {
+                    if (value.qrcode) {
+                        qrCodes[key] = `data:image/svg+xml;base64,${value.qrcode}`;
+                    }
+                    chains[key] = value.chain || '';
+                    addresses[key] = value.address || '';
+                    
+                    // Handle tokens
+                    tokens[key] = value.token ? Object.entries(value.token[0]).map(([tokenName, tokenSymbol]) => `${tokenName} (${tokenSymbol})`).join(', ') : 'None';
+                }
+
+                // Update QR code image and additional info based on selected currency
+                document.getElementById('currency').addEventListener('change', function() {
+                    const selectedCurrency = this.value;
+                    const qrCodeImg = document.getElementById('qr-code-img');
+                    const chainInfo = document.getElementById('chain-info');
+                    const addressCode = document.getElementById('address-code');
+                    const tokenList = document.getElementById('token-list');
+
+                    qrCodeImg.src = qrCodes[selectedCurrency] || '';
+                    chainInfo.textContent = `Chain: ${chains[selectedCurrency] || 'N/A'}`;
+                    addressCode.textContent = addresses[selectedCurrency] || 'N/A';
+                    tokenList.textContent = `Tokens: ${tokens[selectedCurrency] || 'None'}`;
+                });
+
+                // Set initial QR code and info
+                const initialCurrency = 'bitcoin';
+                document.getElementById('qr-code-img').src = qrCodes[initialCurrency] || '';
+                document.getElementById('chain-info').textContent = `Chain: ${chains[initialCurrency] || 'N/A'}`;
+                document.getElementById('address-code').textContent = addresses[initialCurrency] || 'N/A';
+                document.getElementById('token-list').textContent = `Tokens: ${tokens[initialCurrency] || 'None'}`;
+            })
+            .catch(error => console.error('Error fetching JSON:', error));
+    </script>
+</body>
+</html>
