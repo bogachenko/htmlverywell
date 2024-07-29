@@ -12,6 +12,7 @@ body
 	text-align: center;
 	overflow-x: hidden;
 	user-select: none;
+	margin: 20px;
 }
 
 div.main_page
