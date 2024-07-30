@@ -26,7 +26,7 @@
         "qrcode_address": "BEP20-ERC20_QRCODE"
       }
     },
-    "BSC": {
+    "BEP20": {
       "BNB": {
         "address": "0xE4869C3140134522383E316d329612bC886F85E2",
         "qrcode_address": "BEP20-ERC20_QRCODE"
