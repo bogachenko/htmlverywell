@@ -1,46 +1,42 @@
-// The script for receiving donation address data.
-const jsonUrl = 'json-donate.json';
-fetch(jsonUrl)
-	.then(response => response.json())
-	.then(data =>
-	{
-		const qrCodes = {};
-		const chains = {};
-		const addresses = {};
-		const tokens = {};
-		for(const [key, value] of Object.entries(data))
-		{
-			if(value.qrcode)
-			{
-				qrCodes[key] = `data:image/svg+xml;base64,${value.qrcode}`;
+// 
+document.addEventListener("DOMContentLoaded", function() {
+	let e = document.getElementById("network"),
+		t = document.getElementById("coin"),
+		n = document.getElementById("result"),
+		o = document.getElementById("address"),
+		l = document.getElementById("qr-code");
+	fetch("json-donate.json").then(e => e.json()).then(a => {
+		let d = new Map,
+			r = a.qr_codes;
+		Object.keys(a.networks).forEach(e => {
+			Object.keys(a.networks[e]).forEach(t => {
+				d.has(t) || d.set(t, []), d.get(t).push(e)
+			})
+		}), d.forEach((e, n) => {
+			let o = document.createElement("option");
+			o.value = n, o.textContent = n, t.appendChild(o)
+		}), t.addEventListener("change", function() {
+			let o = t.value;
+			if(o) {
+				e.innerHTML = '<option value="">Select Network</option>';
+				let l = d.get(o);
+				l.forEach(t => {
+					let n = document.createElement("option");
+					n.value = t, n.textContent = t, e.appendChild(n)
+				}), n.style.display = "none"
+			} else e.innerHTML = '<option value="">Select Network</option>'
+		}), e.addEventListener("change", function() {
+			let d = e.value,
+				s = t.value;
+			if(d && s) {
+				let i = a.networks[d][s];
+				if(i) {
+					o.textContent = `Wallet Address: ${i.address}`;
+					let c = i.qrcode_key,
+						E = r[c];
+					l.src = `data:image/svg+xml;base64,${E}`, n.style.display = "block"
+				}
 			}
-			chains[key] = value.chain || '';
-			addresses[key] = value.address || '';
-			tokens[key] = value.token ? Object.entries(value.token[0])
-				.map(([tokenName, tokenSymbol]) => `${tokenName} (${tokenSymbol})`)
-				.join(', ') : 'None';
-		}
-		document.getElementById('currency')
-			.addEventListener('change', function()
-			{
-				const selectedCurrency = this.value;
-				const qrCodeImg = document.getElementById('qr-code-img');
-				const chainInfo = document.getElementById('chain-info');
-				const addressInfo = document.getElementById('address-info');
-				const tokenList = document.getElementById('token-list');
-				qrCodeImg.src = qrCodes[selectedCurrency] || '';
-				chainInfo.textContent = chains[selectedCurrency] || 'N/A';
-				addressInfo.textContent = addresses[selectedCurrency] || 'N/A';
-				tokenList.textContent = tokens[selectedCurrency] || 'None';
-			});
-		const initialCurrency = 'bitcoin';
-		document.getElementById('qr-code-img')
-			.src = qrCodes[initialCurrency] || '';
-		document.getElementById('chain-info')
-			.textContent = chains[initialCurrency] || 'N/A';
-		document.getElementById('address-info')
-			.textContent = addresses[initialCurrency] || 'N/A';
-		document.getElementById('token-list')
-			.textContent = tokens[initialCurrency] || 'None';
-	})
-	.catch(error => console.error('Error fetching JSON:', error));
+		})
+	}).catch(e => console.error("Error loading data:", e))
+});

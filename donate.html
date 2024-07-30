@@ -11,8 +11,7 @@
 <body>
 	<noscript>
 		<style>
-			#js-disabled
-			{
+			#js-disabled {
 				user-select: none;
 				position: fixed;
 				top: 0px;
@@ -35,30 +34,18 @@
 			<h3>Please enable JavaScript.</h3>
 		</div>
 	</noscript>
-	<h1>Donate with QR Code</h1>
-	<label for="currency">Choose a currency:</label>
-	<select id="currency">
-		<option value="bitcoin">Bitcoin</option>
-		<option value="bitcoin-cash">Bitcoin Cash</option>
-		<option value="binance-coin">Binance Coin</option>
-		<option value="ethereum">Ethereum</option>
-		<option value="ethereum-classic">Ethereum Classic</option>
-		<option value="tron">TRON</option>
-		<option value="toncoin">TON Coin</option>
-		<option value="dogecoin">Dogecoin</option>
-		<option value="litecoin">Litecoin</option>
-		<option value="solana">Solana</option>
-		<option value="ripple">Ripple</option>
-		<option value="cardano">Cardano</option>
-		<option value="zcash">Zcash</option>
+	<h1>Donation Page</h1>
+	<label for="coin">Select Coin:</label>
+	<select id="coin">
+		<option value="">Select Coin</option>
 	</select>
-	<div class="qr-code">
-		<img id="qr-code-img" src="" alt="QR Code">
-		<div class="info">
-			<p><span class="label">Chain:</span> <span id="chain-info"></span></p>
-			<p><span class="label">Address:</span> <span id="address-info"></span></p>
-			<p><span class="label">Tokens:</span> <span id="token-list"></span></p>
-		</div>
+	<label for="network">Select Network:</label>
+	<select id="network">
+		<option value="">Select Network</option>
+	</select>
+	<div class="result" id="result">
+		<img id="qr-code" alt="QR Code">
+		<p id="address"></p>
 	</div>
 </body>
 </html>
