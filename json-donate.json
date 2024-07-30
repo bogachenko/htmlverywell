@@ -109,6 +109,36 @@
         "address": "0xE4869C3140134522383E316d329612bC886F85E2",
         "name": "MATIC (MATIC)",
         "qrcode_address": "qrcode_address-003"
+      },
+      "SHIB": {
+        "address": "0xE4869C3140134522383E316d329612bC886F85E2",
+        "name": "SHIBA INU (SHIB)",
+        "qrcode_address": "qrcode_address-003"
+      },
+      "SOL": {
+        "address": "0xE4869C3140134522383E316d329612bC886F85E2",
+        "name": "Solana (SOL)",
+        "qrcode_address": "qrcode_address-003"
+      },
+      "BONK": {
+        "address": "0xE4869C3140134522383E316d329612bC886F85E2",
+        "name": "BONK (BONK)",
+        "qrcode_address": "qrcode_address-003"
+      },
+      "DOT": {
+        "address": "0xE4869C3140134522383E316d329612bC886F85E2",
+        "name": "Polkadot (DOT)",
+        "qrcode_address": "qrcode_address-003"
+      },
+      "ATOM": {
+        "address": "0xE4869C3140134522383E316d329612bC886F85E2",
+        "name": "ATOM (ATOM)",
+        "qrcode_address": "qrcode_address-003"
+      },
+      "XLM": {
+        "address": "0xE4869C3140134522383E316d329612bC886F85E2",
+        "name": "Stellar (XLM)",
+        "qrcode_address": "qrcode_address-003"
       }
     },
     "ERC20": {
@@ -130,6 +160,16 @@
       "BNB": {
         "address": "0xE4869C3140134522383E316d329612bC886F85E2",
         "name": "Binance Coin (BNB)",
+        "qrcode_address": "qrcode_address-003"
+      },
+      "BTC": {
+        "address": "0xE4869C3140134522383E316d329612bC886F85E2",
+        "name": "Bitcoin (BTC)",
+        "qrcode_address": "qrcode_address-003"
+      },
+      "BCH": {
+        "address": "0xE4869C3140134522383E316d329612bC886F85E2",
+        "name": "Bitcoin Cash (BCH)",
         "qrcode_address": "qrcode_address-003"
       },
       "XRP": {
@@ -162,9 +202,9 @@
         "name": "MATIC (MATIC)",
         "qrcode_address": "qrcode_address-003"
       },
-      "OP": {
+      "TRX": {
         "address": "0xE4869C3140134522383E316d329612bC886F85E2",
-        "name": "OPTIMISM (OP)",
+        "name": "TRON (TRX)",
         "qrcode_address": "qrcode_address-003"
       }
     },
@@ -302,6 +342,11 @@
         "address": "3c329bfd840751404f4377cace534c8bafce833cd7bf002a0f86cc16c9c15842",
         "name": "NEAR (NEAR)",
         "qrcode_address": "qrcode_address-016"
+      },
+      "USDC": {
+        "address": "3c329bfd840751404f4377cace534c8bafce833cd7bf002a0f86cc16c9c15842",
+        "name": "USD Coin (USDC)",
+        "qrcode_address": "qrcode_address-016"
       }
     },
     "XLM": {
@@ -313,7 +358,7 @@
     },
     "RVN": {
       "RVN": {
-        "address": "GDIIOHPMSUJXHRPZLRQYJWMCGZOKMPC27CWKG5EVBUYPRA34XXEYQBUS",
+        "address": "RT1vTPkrnHS3DCNozEaPtUoxCtSkEDFneZ",
         "name": "Ravencoin (RVN)",
         "qrcode_address": "qrcode_address-018"
       }
@@ -333,9 +378,14 @@
         "address": "0xE4869C3140134522383E316d329612bC886F85E2",
         "name": "Tether (USDT)",
         "qrcode_address": "qrcode_address-003"
+      },
+      "USDC": {
+        "address": "0xE4869C3140134522383E316d329612bC886F85E2",
+        "name": "USD Coin (USDC)",
+        "qrcode_address": "qrcode_address-003"
       }
     },
-    "POLYGON": {
+    "Polygon": {
       "MATIC": {
         "address": "0xE4869C3140134522383E316d329612bC886F85E2",
         "name": "MATIC (MATIC)",
@@ -345,9 +395,24 @@
         "address": "0xE4869C3140134522383E316d329612bC886F85E2",
         "name": "Tether (USDT)",
         "qrcode_address": "qrcode_address-003"
+      },
+      "USDC": {
+        "address": "0xE4869C3140134522383E316d329612bC886F85E2",
+        "name": "USD Coin (USDC)",
+        "qrcode_address": "qrcode_address-003"
+      },
+      "ETH": {
+        "address": "0xE4869C3140134522383E316d329612bC886F85E2",
+        "name": "Ethereum (ETH)",
+        "qrcode_address": "qrcode_address-003"
+      },
+      "BNB": {
+        "address": "0xE4869C3140134522383E316d329612bC886F85E2",
+        "name": "Binance Coin (BNB)",
+        "qrcode_address": "qrcode_address-003"
       }
     },
-    "OPTIMISM": {
+    "Optimism": {
       "OP": {
         "address": "0xE4869C3140134522383E316d329612bC886F85E2",
         "name": "Optimism (OP)",
@@ -362,9 +427,14 @@
         "address": "0xE4869C3140134522383E316d329612bC886F85E2",
         "name": "Tether (USDT)",
         "qrcode_address": "qrcode_address-003"
+      },
+      "USDC": {
+        "address": "0xE4869C3140134522383E316d329612bC886F85E2",
+        "name": "USD Coin (USDC)",
+        "qrcode_address": "qrcode_address-003"
       }
     },
-    "KLAYTH": {
+    "Klayth": {
       "KLAY": {
         "address": "0xE4869C3140134522383E316d329612bC886F85E2",
         "name": "KLAY (KLAY)",
@@ -375,6 +445,11 @@
       "CELO": {
         "address": "0xE4869C3140134522383E316d329612bC886F85E2",
         "name": "CELO (CELO)",
+        "qrcode_address": "qrcode_address-003"
+      },
+      "USDC": {
+        "address": "0xE4869C3140134522383E316d329612bC886F85E2",
+        "name": "USD Coin (USDC)",
         "qrcode_address": "qrcode_address-003"
       }
     }
