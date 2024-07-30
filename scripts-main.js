@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayUserAgentAndOS() {
         const userAgent = navigator.userAgent;
         const infoContainer = document.getElementById('info-container');
-        infoContainer.innerHTML += '<p>Your User-Agent is: <strong>' + userAgent + '</strong></p>';
+        infoContainer.innerHTML += '<p>User-Agent: <strong>' + userAgent + '</strong></p>';
         let os = 'Unknown OS';
         if (/Android/.test(userAgent)) os = 'Android';
         else if (/iPhone/.test(userAgent)) os = 'iOS (iPhone)';
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         else if (/Windows NT 5.1/.test(userAgent)) os = 'Windows XP';
         else if (/Linux/.test(userAgent)) os = 'Linux';
         else if (/X11/.test(userAgent)) os = 'UNIX';
-        infoContainer.innerHTML += '<p>Your Operating System is: <strong>' + os + '</strong></p>';
+        infoContainer.innerHTML += '<p>Operating System: <strong>' + os + '</strong></p>';
     }
     function fetchIpAndCountry() {
         fetch('https://api.ipify.org?format=json')
@@ -45,13 +45,13 @@ document.addEventListener('DOMContentLoaded', function() {
                                 break;
                             }
                         }
-                        infoContainer.innerHTML += `<p>Your country is: <strong>${country}</strong> <img src="${flagBase64}" alt="${country} flag" class="flags"></p>`;
+                        infoContainer.innerHTML += `<p>Country: <strong>${country}</strong> <img src="${flagBase64}" alt="${country} flag" class="flags"></p>`;
                     });
             })
             .catch(error => {
                 console.error('Error fetching IP address or country:', error);
                 const infoContainer = document.getElementById('info-container');
-                infoContainer.innerHTML += `<p>Your IP address is: <strong class="error-message">Unable to fetch IP address at this time.</strong></p><p>Your country is: <strong class="error-message">Unable to fetch country information at this time.</strong></p>`;
+                infoContainer.innerHTML += `<p>IP address: <strong class="error-message">Unable to fetch IP address at this time.</strong></p><p>Country: <strong class="error-message">Unable to fetch country information at this time.</strong></p>`;
             });
     }
     displayUserAgentAndOS();
