@@ -1,4 +1,8 @@
-// 
+function selectText(e) {
+	let t = document.createRange(),
+		n = window.getSelection();
+	t.selectNodeContents(e), n.removeAllRanges(), n.addRange(t)
+}
 document.addEventListener("DOMContentLoaded", function() {
 	let e = document.getElementById("network"),
 		t = document.getElementById("coin"),
@@ -29,12 +33,12 @@ document.addEventListener("DOMContentLoaded", function() {
 			let s = e.value,
 				r = t.value;
 			if(s && r) {
-				let i = a.networks[s][r];
-				if(i) {
-					o.textContent = `Wallet Address: ${i.address}`;
-					let c = i.qr_code_key,
-						y = d[c];
-					l.src = `data:image/svg+xml;base64,${y}`, n.style.display = "block"
+				let c = a.networks[s][r];
+				if(c) {
+					o.textContent = `${c.address}`;
+					let i = c.qrcode_address,
+						g = d[i];
+					l.src = `data:image/svg+xml;base64,${g}`, n.style.display = "block", selectText(o)
 				}
 			} else o.textContent = "", l.src = "", n.style.display = "none"
 		})

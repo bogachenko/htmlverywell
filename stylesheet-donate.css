@@ -1,24 +1,32 @@
-body
-{
+body {
 	font-family: Arial, sans-serif;
 	margin: 20px;
 	text-align: center
 }
 
-button,
-select
-{
-	margin-bottom: 10px
+select {
+	display: block;
+	padding: 5px;
+	font-size: 16px;
+	width: 200px;
+	margin: 5px auto 15px
 }
 
-.result
-{
+.result {
 	display: none;
 	margin-top: 20px
 }
 
-.result img
-{
+.result img {
 	max-width: 200px;
-	height: auto
+	height: auto;
+	display: block;
+	margin: 10px auto 0
+}
+
+#address {
+	word-wrap: break-word; /* Break long words */
+	white-space: normal; /* Allow wrapping of text */
+user-select: text; /* Allow text selection */
+	cursor: text;
 }

@@ -82,6 +82,10 @@
       "NOT": {
         "address": "UQCt3JyjW8EvFidU18qnrnfMnSdTWdqKJkJpvuxW9W0dwTU7",
         "qrcode_address": "TON_QRCODE"
+      },
+      "USDT": {
+        "address": "UQCt3JyjW8EvFidU18qnrnfMnSdTWdqKJkJpvuxW9W0dwTU7",
+        "qrcode_address": "TON_QRCODE"
       }
     },
     "DOGE": {
