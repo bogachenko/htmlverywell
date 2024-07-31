@@ -29,3 +29,7 @@ select {
 	user-select: text;
 	cursor: text
 }
+
+.warning-text {
+    color: red;
+}
