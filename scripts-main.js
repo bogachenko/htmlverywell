@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		fetch('https://api.ipify.org?format=json').then(response => response.json()).then(data => {
 			const ipAddress = data.ip;
 			const infoContainer = document.getElementById('info-container');
-			infoContainer.innerHTML += `<p>Your IP address is: <strong>${ipAddress}</strong></p>`;
+			infoContainer.innerHTML += `<p>IP address: <strong>${ipAddress}</strong></p>`;
 			return fetch(`https://ipapi.co/${ipAddress}/json/`);
 		}).then(response => response.json()).then(async data => {
 			const country = data.country_name;
